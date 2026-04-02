@@ -1,0 +1,11 @@
+services:
+  stock-signals:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ./reports:/app/reports
+    environment:
+      - BUDGET=10000
+      - TARGET_PCT=5.0
+      - STOP_PCT=3.0
+      - SCHEDULE_TIME_UTC=14:35
